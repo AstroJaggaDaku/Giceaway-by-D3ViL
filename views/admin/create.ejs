@@ -1,0 +1,12 @@
+<% layout('../layout') -%>
+<div class="bg-white p-6 rounded shadow max-w-xl">
+  <h2 class="text-xl font-semibold mb-4">Create Giveaway</h2>
+  <form method="post">
+    <label class="block mb-2">Title <input name="title" class="w-full p-2 border rounded" required /></label>
+    <label class="block mb-2">Description <textarea name="description" class="w-full p-2 border rounded"></textarea></label>
+    <label class="block mb-2">Starts At <input name="start_at" placeholder="YYYY-MM-DD HH:MM" class="w-full p-2 border rounded" /></label>
+    <label class="block mb-2">Ends At <input name="end_at" placeholder="YYYY-MM-DD HH:MM" class="w-full p-2 border rounded" /></label>
+    <label class="block mb-4">Max Winners <input name="max_winners" value="1" class="w-24 p-2 border rounded" /></label>
+    <button class="bg-indigo-600 text-white px-4 py-2 rounded">Create</button>
+  </form>
+</div>

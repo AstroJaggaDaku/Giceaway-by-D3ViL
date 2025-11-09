@@ -1,0 +1,9 @@
+<% layout('../layout') -%>
+<div class="bg-white p-6 rounded shadow">
+  <h2 class="text-xl font-semibold mb-4">Winners for <%= giveawayId %></h2>
+  <ul class="space-y-2">
+    <% winners.forEach(w => { %>
+      <li class="border p-2 rounded"><%= w.name %> — <%= w.contact %> • <%= new Date(w.created_at).toLocaleString() %></li>
+    <% }) %>
+  </ul>
+</div>

@@ -1,0 +1,12 @@
+<% layout('../layout') -%>
+<div class="max-w-md mx-auto bg-white p-6 rounded shadow">
+  <h2 class="text-xl font-semibold mb-4">Admin Login</h2>
+  <% if (typeof error !== 'undefined') { %>
+    <div class="text-red-600 mb-3"><%= error %></div>
+  <% } %>
+  <form method="post">
+    <label class="block mb-2">Email <input name="email" class="w-full p-2 border rounded" /></label>
+    <label class="block mb-4">Password <input type="password" name="password" class="w-full p-2 border rounded" /></label>
+    <button class="bg-indigo-600 text-white px-4 py-2 rounded">Login</button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<% layout('layout') -%>
+<section class="grid md:grid-cols-3 gap-6">
+  <div class="md:col-span-2">
+    <h1 class="text-3xl font-bold mb-2">Active Giveaways</h1>
+    <p class="text-gray-600 mb-6">Join exciting giveaways below. Click any giveaway to view details and join.</p>
+    <div class="space-y-4">
+      <% giveaways.forEach(g => { %>
+      <article class="bg-white rounded-lg p-4 shadow">
+        <h2 class="text-xl font-semibold"><a href="/giveaway/<%= g.id %>"><%= g.title %></a></h2>
+        <p class="text-gray-700 mt-2"><%= g.description %></p>
+        <div class="text-sm text-gray-500 mt-3">Starts: <%= new Date(g.start_at).toLocaleString() %> • Ends: <%= g.end_at ? new Date(g.end_at).toLocaleString() : '—' %></div>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+  <aside class="bg-white rounded-lg p-4 shadow">
+    <h3 class="font-semibold">How it works</h3>
+    <ol class="list-decimal list-inside text-gray-700 mt-2">
+      <li>Admin creates giveaway.</li>
+      <li>Participants join via unique page.</li>
+      <li>Admin draws winners when ready.</li>
+    </ol>
+    <p class="text-sm text-gray-500 mt-4">Admins: use the Admin panel to manage giveaways.</p>
+  </aside>
+</section>

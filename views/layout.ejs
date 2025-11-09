@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= title || 'Giveaways' %></title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white p-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-semibold">Giveaway Platform</a>
+        <nav>
+          <a href="/admin/login" class="px-3 py-1 bg-white text-indigo-600 rounded">Admin</a>
+        </nav>
+      </div>
+    </header>
+    <main class="max-w-6xl mx-auto p-6"><%- body %></main>
+    <footer class="text-center text-sm text-gray-500 p-6">© <%= new Date().getFullYear() %> Giveaway Platform</footer>
+  </body>
+</html>

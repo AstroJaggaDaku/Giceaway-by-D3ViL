@@ -1,0 +1,25 @@
+<% layout('../layout') -%>
+<div class="flex justify-between items-center mb-4">
+  <h2 class="text-2xl font-semibold">Dashboard</h2>
+  <div>
+    <a href="/admin/giveaways/create" class="bg-green-500 text-white px-3 py-1 rounded">Create Giveaway</a>
+    <a href="/admin/logout" class="ml-2 text-sm text-gray-600">Logout</a>
+  </div>
+</div>
+<table class="min-w-full bg-white">
+  <thead><tr><th class="px-4 py-2">Title</th><th class="px-4 py-2">Starts</th><th class="px-4 py-2">Ends</th><th class="px-4 py-2">Actions</th></tr></thead>
+  <tbody>
+  <% giveaways.forEach(g => { %>
+    <tr class="border-t">
+      <td class="px-4 py-2"><%= g.title %></td>
+      <td class="px-4 py-2"><%= new Date(g.start_at).toLocaleString() %></td>
+      <td class="px-4 py-2"><%= g.end_at ? new Date(g.end_at).toLocaleString() : '—' %></td>
+      <td class="px-4 py-2">
+        <a href="/admin/giveaways/<%= g.id %>/edit" class="text-blue-600">Edit</a> |
+        <a href="/admin/giveaways/<%= g.id %>/participants" class="text-blue-600">Participants</a> |
+        <a href="/admin/giveaways/<%= g.id %>/winners" class="text-blue-600">Winners</a>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>

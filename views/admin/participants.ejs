@@ -1,0 +1,13 @@
+<% layout('../layout') -%>
+<div class="bg-white p-6 rounded shadow">
+  <h2 class="text-xl font-semibold mb-4">Participants for <%= giveawayId %></h2>
+  <div class="mb-3">
+    <a href="/admin/giveaways/<%= giveawayId %>/participants/export" class="bg-blue-600 text-white px-3 py-1 rounded">Export CSV</a>
+  </div>
+  <form method="post" action="/admin/giveaways/<%= giveawayId %>/draw"><button class="bg-green-600 text-white px-3 py-1 rounded">Pick Winners</button></form>
+  <ul class="mt-3 space-y-2">
+    <% participants.forEach(p => { %>
+      <li class="border p-2 rounded"><%= p.name %> — <%= p.contact %> • <%= new Date(p.created_at).toLocaleString() %></li>
+    <% }) %>
+  </ul>
+</div>
