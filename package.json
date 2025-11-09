@@ -1,33 +1,29 @@
 {
-  "name": "giveaway-webapp",
+  "name": "giveaway-app",
   "version": "1.0.0",
-  "description": "A standalone Node.js-based Giveaway Web Application with admin panel, participant list, and winner selection system.",
+  "description": "Giveaway management web app using Express, SQLite, and EJS.",
   "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "seed": "node seed-admin.js",
-    "vercel-build": "echo 'No Next.js build step required'"
+    "seed-admin": "node seed-admin.js",
+    "vercel-build": "npm install && npm run build || echo 'No build step needed for Express app'",
+    "build": "echo 'Skipping Next.js build; Express app only.'"
   },
   "dependencies": {
+    "async-sqlite": "^2.0.1",
     "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.3",
+    "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.1",
-    "express-rate-limit": "^7.3.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
     "express-session": "^1.18.1",
-    "helmet": "^7.1.2",
-    "nanoid": "^5.0.7",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.6"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "helmet": "^7.1.0",
+    "nanoid": "^3.3.7"
   },
   "engines": {
     "node": "22.x"
   },
-  "author": "Astrologer Joydev Sastri",
   "license": "MIT"
 }
